@@ -1,0 +1,62 @@
+
+import java.util.Scanner;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author naufa
+ */
+public class tugas {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int a, b, choice, hasil = 0;
+        
+        System.out.println("Selamat datang di minimarket Jingga");
+        System.out.println("Berikut barang-barang kami : ");
+        String ulang = "";
+        do {
+            System.out.println("1. Sabun Mandi      Rp20.000,00");
+            System.out.println("2. Shampoo          Rp12.000,00");
+            System.out.println("3. Gula             Rp8.000,00");
+            System.out.println("4. Pasta Gigi       Rp10.000,00");
+            System.out.println("5. Minuman Ringan   Rp6.000,00");
+            System.out.println("6. Makanan Ringan   Rp5.000,00");
+            System.out.println("7. Permen           Rp500,00");
+            System.out.println("8. Es Krim          Rp10.000,00");
+            System.out.println("-----------------------------------");
+            
+            System.out.println("Pilih Barang : ");
+            int barang = input.nextInt();
+            
+            int hargab = 0;
+            
+            switch (barang){
+                case 1:hargab=20000;break;
+                case 2:hargab=12000;break;
+                case 3:hargab=8000;break;
+                case 4:hargab=10000;break;
+                case 5:hargab=6000;break;
+                case 6:hargab=5000;break;
+                case 7:hargab=500;break;
+                case 8:hargab=10000;break;
+                default:System.out.println("Stock barang tidak ada");
+            }
+            System.out.print("Uang anda = ");
+        int uang = input.nextInt();
+        int kembalian;
+        if (uang>hargab){
+            kembalian=uang-hargab;
+            System.out.println("Kembalianmu = "+kembalian);
+            System.out.println("Apakah ada tambahan barang?");
+        }else{
+            System.out.println("Mohon Maaf uang anda tidak cukup");
+            System.out.println("Apakah anda mau pilih barang lain?");
+        }
+         ulang = input.next();
+        }while (ulang.equalsIgnoreCase("ya"));
+    }
+}
